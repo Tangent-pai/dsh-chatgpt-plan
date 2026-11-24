@@ -6,7 +6,32 @@ An independent Windows x64 plugin for DSH Desktop. Use your ChatGPT subscription
 
 ### Install
 
-Run `python package-release.py` to build a local `.tgz`, then install it from **Plugins → Add plugin** in DSH Desktop. Quit and reopen DSH after upgrades.
+In DSH Desktop, select **Plugins → Add plugin** in the sidebar, paste the following Git spec into the package field, and click **Install** (no local build required):
+
+```text
+git+https://github.com/Tangent-pai/dsh-chatgpt-plan.git#6cdfe0ad5e3bb74503a6e5a9b88b763b73db0ad1
+```
+
+If the DSH CLI is available, the equivalent command for the CLI's current profile is:
+
+```bash
+dsh plugin add "git+https://github.com/Tangent-pai/dsh-chatgpt-plan.git#6cdfe0ad5e3bb74503a6e5a9b88b763b73db0ad1"
+```
+
+To install from a local checkout instead, run `python package-release.py` to create a `.tgz` archive and paste its absolute path into the same desktop installation field.
+
+Quit and reopen DSH Desktop after an upgrade.
+
+#### Ask DSH Agent to install it
+
+If your DSH Agent has access to the `plugin_manager` tool, you can copy and send this prompt to have it install and enable the plugin for you:
+
+```text
+Please install and enable the plugin from https://github.com/Tangent-pai/dsh-chatgpt-plan for my current DSH profile using your plugin_manager tool (action: install_bundle) with the install target:
+git+https://github.com/Tangent-pai/dsh-chatgpt-plan.git#6cdfe0ad5e3bb74503a6e5a9b88b763b73db0ad1
+
+Once done, let me know whether activation succeeded right away or requires a restart, and leave login to me.
+```
 
 ### Sign in
 
@@ -29,7 +54,32 @@ License and notices: [LICENSE](LICENSE), [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NO
 
 ### 安装
 
-运行 `python package-release.py` 在本地打出一个 `.tgz` 包，再到 DSH Desktop 的 **Plugins → Add plugin** 里选中安装。升级插件后记得退出再重新打开 DSH。
+在 DSH Desktop 中，从侧边栏选择 **插件 → 添加插件**，将以下 Git 地址粘贴到包输入框中，然后点击 **安装**（无需本地构建）：
+
+```text
+git+https://github.com/Tangent-pai/dsh-chatgpt-plan.git#6cdfe0ad5e3bb74503a6e5a9b88b763b73db0ad1
+```
+
+如果有 DSH CLI，可在 CLI 当前配置下运行等效命令：
+
+```bash
+dsh plugin add "git+https://github.com/Tangent-pai/dsh-chatgpt-plan.git#6cdfe0ad5e3bb74503a6e5a9b88b763b73db0ad1"
+```
+
+如需从本地检出的仓库安装，运行 `python package-release.py` 生成 `.tgz` 文件，再将其绝对路径粘贴到同一个桌面端安装输入框中。
+
+升级后请退出并重新打开 DSH Desktop。
+
+#### 让 DSH Agent 安装
+
+如果你使用的 DSH Agent 支持 `plugin_manager` 工具，可以直接复制下面这段提示词，让它帮你安装并启用插件：
+
+```text
+请使用你的 plugin_manager 工具（action 为 install_bundle），将 https://github.com/Tangent-pai/dsh-chatgpt-plan 插件安装并启用到我当前的 DSH profile，安装目标为：
+git+https://github.com/Tangent-pai/dsh-chatgpt-plan.git#6cdfe0ad5e3bb74503a6e5a9b88b763b73db0ad1
+
+完成后请告诉我插件是已直接生效还是需要重启，登录步骤留给我自己完成即可。
+```
 
 ### 登录
 
