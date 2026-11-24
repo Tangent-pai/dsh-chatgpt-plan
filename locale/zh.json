@@ -1,0 +1,1 @@
+{"meta":{"title":"ChatGPT 订阅接入","description":"在 DSH 中通过 OpenAI 官方 OAuth 使用 ChatGPT 订阅额度。账户文本型号每五分钟自动更新；在会话中输入 /chatgpt-plan login 授权、models 查看型号。新增官方 Codex 订阅生图桥：image-login 独立登录，image-status 查看状态；当前桥固定 gpt-image-2，非可选 image2.6。"}}

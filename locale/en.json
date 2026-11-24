@@ -1,0 +1,1 @@
+{"meta":{"title":"ChatGPT plan access","description":"Connect your ChatGPT plan to DSH via OpenAI OAuth. Account text models refresh every five minutes; run /chatgpt-plan login, then models. Separate official Codex image bridge: image-login connects it; image-status checks readiness. The bridge fixes gpt-image-2, with no image2.6 selection."}}

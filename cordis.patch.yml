@@ -1,0 +1,4 @@
+- insert:
+    - id: chatgpt-plan
+      name: '@local/dsh-chatgpt-plan'
+      config: {}

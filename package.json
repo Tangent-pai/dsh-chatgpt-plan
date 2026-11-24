@@ -1,0 +1,20 @@
+{
+  "name": "@local/dsh-chatgpt-plan",
+  "version": "0.1.13",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "test": "node --test auth-settings.test.mjs usage.test.mjs codex-rpc.test.mjs",
+    "test:image": "node --test image-bridge.test.mjs"
+  },
+  "description": "Use a ChatGPT plan for DSH inference through Sign in with ChatGPT.",
+  "engines": { "dsh": ">=0.2.2-rc.3 <0.3.0" },
+  "exports": { ".": "./index.js", "./client": "./client.js", "./locale/*.json": "./locale/*.json", "./icon": "./icon.svg" },
+  "files": ["index.js", "specs.js", "image-bridge.js", "codex-rpc.js", "usage.js", "auth-settings.js", "client.js", "cordis.patch.yml", "locale/*.json", "icon.svg", "README.md", "THIRD_PARTY_NOTICES.md"],
+  "dependencies": { "@openai/codex": "0.169.0", "pngjs": "7.0.0" },
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": { "platform": "web", "immediately": true, "inject": ["@deepseek-ai/dsh-client-ui-sidebar", "@deepseek-ai/dsh-client-ui-settings-plugins"] }
+  }
+}
